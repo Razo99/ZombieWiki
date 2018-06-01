@@ -1,0 +1,27 @@
+<% include header%>
+<h2>crea una nueva entrada</h2> 
+<form method="post" role="form">
+<div class="form-group">
+    <label for="title">Victima</label>
+    <input type="text" class="form-control" id="title" name="title" placeholder="Escribe un texto aqui" required />
+</div>
+<div class="form-group">
+<label for="body">direccion</label>
+<textarea class="form-control" id="body" 
+ name="body" placeholder="Paseo del aguacate" rows="3" required></textarea>
+</div>
+<div class="form-group">
+    <label for="body">telefono</label>
+    <textarea class="form-control" id="body" 
+     name="body" placeholder="61848565" rows="3" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="body">instragram</label>
+        <textarea class="form-control" id="body" 
+         name="body" placeholder="OldRazo" rows="3" required></textarea>
+        </div>
+<div class="form-group">
+    <input type="submit" class="btn btn-primary" value="Aceptar"/>
+</div>
+</form>
+<% include footer%>
