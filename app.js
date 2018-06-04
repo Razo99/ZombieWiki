@@ -12,6 +12,15 @@ app.set('view engine','ejs');
 var publicPath = path.join(__dirname,'public');
 app.use('/recursos',express.static(publicPath));
 
+var IP_MALVADA="192.168.0.50,192.168.0.3,192.168.0.4,192.168.0.1,192.168.0.2";
+
+app.use((request,response,next)=>{
+if(request.ip === IP_MALVADA){response.status(401).send("Intento de acceso no autorizado");}
+else{
+    next();
+}
+});
+
 
 var entries =[];
 app.locals.entries = entries;
@@ -35,7 +44,7 @@ app.post('/new-entry',(request,response)=>{
         body: request.body.body,
         created: new Date()
     });
-    response.redirect('/');
+    response.redirect('/victimas');
 });
 
 app.use((request,response)=>response.status(404).render('404'));
